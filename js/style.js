@@ -9,3 +9,6 @@ document.addEventListener('click', e => {
     $signUp.classList.toggle('active');
   }
 });
+function redirectToLogin(){
+  window.location.href = '/html/Principal.html'
+}
