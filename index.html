@@ -71,38 +71,6 @@
         </div>
         
     </div>
-    <script>
-        document.getElementById('formulario').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita el envío del formulario por defecto
-
-            // Obtener los valores de los campos de entrada
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-
-            // Validar los datos
-            if (name.trim() === '') {
-                alert('Por favor, ingresa tu nombre.');
-                return;
-            }
-
-            if (!email.endsWith('@gmail.com')) {
-                alert('Por favor, ingresa un correo electrónico válido de Gmail.');
-                return;
-            }
-
-            if (password.length < 8) {
-                alert('La contraseña debe tener al menos 8 caracteres.');
-                return;
-            }
-
-            // // Abrir una nueva pestaña con el contenido HTML y pasar el nombre como parámetro
-            
-            window.location.href = 'html/base.html?name=' + encodeURIComponent(name);
-
-
-        });
-    </script>
     <script src="js/style.js"></script>
 </body>
 </html>
