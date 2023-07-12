@@ -8,17 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;&display=swap" rel="stylesheet">
     <link href='https://unpkg.co/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <title>Restaurante Los Primos </title>
+    <title>Restaurante Los Primos</title>
 </head>
 
 
 <body>
+    <div id="notificacion-container"></div>
     <div class="container-form sign-up">
         <div class="welcome-back">
             <div class="message">
                 <h2>Bienvenido al Restaurante Los Primos</h2>
                 <p>Si ya tienes cuenta por favor inicia session aquí</p>
-                <button class="sign-up-btn">Iniciar session</button>
+                <button class="sign-up-btn">Iniciar sesion</button>
             </div>
         </div>
         <form class="formulario">
@@ -35,10 +36,10 @@
                 </div>
             </div>
             <p class="cuenta-gratis">Crear una cuenta gratis</p>
-            <input type="text" placeholder="Nombre">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Registrarse">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Contraseña" required>
+            <input type="button" value="Registrarse" onclick="redirectToLogin()">
         </form>
     </div>
     <div class="container-form sign-in">
@@ -56,19 +57,52 @@
                 </div>
             </div>
             <p class="cuenta-gratis">¿Aun no tienes cuenta?</p>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Iniciar Sesion">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Contraseña" required>
+            <input type="button" value="Iniciar Sesion" onclick="redirectToLogin()">
+
         </form>
         <div class="welcome-back">
             <div class="message">
                 <h2>Bienvenido al Restaurante Los Primos</h2>
                 <p>Si aun no tienes una cuenta por favor regrístrese aqui</p>
-                <button class="sign-in-btn">Registrase</button>
+                <button class="sign-in-btn">Registrarse</button>
             </div>
         </div>
         
     </div>
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+
+            // Obtener los valores de los campos de entrada
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Validar los datos
+            if (name.trim() === '') {
+                alert('Por favor, ingresa tu nombre.');
+                return;
+            }
+
+            if (!email.endsWith('@gmail.com')) {
+                alert('Por favor, ingresa un correo electrónico válido de Gmail.');
+                return;
+            }
+
+            if (password.length < 8) {
+                alert('La contraseña debe tener al menos 8 caracteres.');
+                return;
+            }
+
+            // // Abrir una nueva pestaña con el contenido HTML y pasar el nombre como parámetro
+            
+            window.location.href = 'html/base.html?name=' + encodeURIComponent(name);
+
+
+        });
+    </script>
     <script src="js/style.js"></script>
 </body>
 </html>
