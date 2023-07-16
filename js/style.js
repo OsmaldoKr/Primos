@@ -9,10 +9,12 @@ document.addEventListener('click', e => {
     $signUp.classList.toggle('active');
   }
 });
+/*Funcion para los botones cuales redigiren a local o externos*/
+/*Local*/
 function redirectToLogin(){
   window.location.href = '/html/Principal.html'
 }
-
+/*Externo */
 function redirectSocialIng(){
   window.location.href =  'https://instagram.com/osmaldokr?igshid=NGExMmI2YTkyZg==' 
 }
