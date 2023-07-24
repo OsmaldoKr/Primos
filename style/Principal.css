@@ -8,14 +8,14 @@
 }
 
 header{
-    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.863);
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 .logo{
-    width: 10rem;
+    width: 7rem;
     padding: 2px;
 }
 
@@ -39,4 +39,33 @@ li a:hover{
     width: 30px;
     align-items: center;
     margin: 4px;
+}
+
+.welcome{
+    background-image:url(/assets/body.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding-bottom: 13.4em;
+}
+
+button{
+    background-color: transparent;
+    border:none;
+    padding-top: 23rem;
+    padding-left: 4.6rem;
+}
+#text_welcome{
+    box-shadow: rgb(0, 0, 0) 0px 10px 20px, rgb(0, 0, 0) 0px 6px 6px;
+    transition: all 300ms ease;
+    border-radius: 20px;
+    color: aliceblue;
+    font-size: 21px;
+    background-color: black;
+    padding: 15px;
+    text-decoration: none;
+}
+
+#text_welcome:hover{
+    box-shadow: rgba(50, 50, 93, 0.637) 0px 30px 60px -12px inset,
+    rgb(0, 0, 0) 0px 18px 36px -18px inset;
 }
