@@ -1,89 +1,49 @@
 <!DOCTYPE html>
-
-<!-- lenguaje en el que esta la pagina -->
-<html lang="es">
-
+<html lang="en">
 <head>
-    <!-- Funciones internas de la pagina y titulo reflejado en la pantalla -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style/style.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;&display=swap" rel="stylesheet">
-    <link href='https://unpkg.co/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Titulo de la pagina -->
-    <title>Restaurante Los Primos</title>
+    <title>Los Primos | Restaurante</title>
+    <link rel="stylesheet" href="/style/style.css">
 </head>
-
-<!-- Estructura de la pagina -->
 <body>
-
-    <!-- Mensaje de inicio de sesion -->
-    <div id="notificacion-container"></div>
-    <div class="container-form sign-up">
-        <div class="welcome-back">
-            <div class="message">
-                <h2>Bienvenido al Restaurante Los Primos</h2>
-                <p>Si ya tienes cuenta por favor inicia session aquí</p>
-                <button class="sign-up-btn">Iniciar sesion</button>
-            </div>
-        </div>
-
-        <!-- Registrarse -->
-        <form class="formulario">
-            <h2 class="Create-account">Crear una cuenta</h2>
-            <div class="iconos">
-                <div class="border-iconos">
-                    <i class='bx bxl-instagram-alt' onclick="redirectSocialIng()"></i>
-                </div>
-                <div class="border-iconos">
-                    <i class='bx bxl-facebook-circle' onclick="redirectSocialFb()"></i>
-                </div>
-                <div class="border-iconos">
-                    <i class='bx bxl-tiktok' onclick="redirectSocialTT()"></i>
-                </div>
-            </div>
-            <p class="cuenta-gratis">Crear una cuenta gratis</p>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Contraseña" required>
-            <input type="button" value="Registrarse" onclick="redirectToLogin()">
+    <h1>Registro e Inicio de Sesión</h1>
+    <div class="container">
+        <!-- Formulario de registro -->
+    <div id="registrationFormContainer">
+        <h2>Registro</h2>
+        <form id="registrationForm" onsubmit="validateForm()">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+          <br>
+          <label for="password">Contraseña (mínimo 8 caracteres):</label>
+          <input type="password" id="password" name="password" required>
+          <br>
+          <input type="submit" value="Enviar" >
         </form>
-    </div>
-
-    <!-- Inicio de sesion -->
-    <div class="container-form sign-in">
-        <form class="formulario">
-            <h2 class="Create-account">Iniciar Sesion</h2>
-            <div class="iconos">
-                <div class="border-iconos">
-                    <i class='bx bxl-instagram-alt' onclick="redirectSocialIng()"></i>
-                </div>
-                <div class="border-iconos">
-                    <i class='bx bxl-facebook-circle' onclick="redirectSocialFb()"></i>
-                </div>
-                <div class="border-iconos">
-                    <i class='bx bxl-tiktok' onclick="redirectSocialTT()"></i>
-                </div>
-            </div>
-            <p class="cuenta-gratis">¿Aun no tienes cuenta?</p>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Contraseña" required>
-            <input type="button" value="Iniciar Sesion" onclick="redirectToLogin()">
+      </div>
+    
+      <!-- Formulario de inicio de sesión -->
+      <div id="loginFormContainer">
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm" onsubmit="login()">
+          <label for="loginEmail">Correo electrónico:</label>
+          <input type="email" id="loginEmail" name="loginEmail" required>
+          <br>
+          <label for="loginPassword">Contraseña:</label>
+          <input type="password" id="loginPassword" name="loginPassword" required>
+          <br>
+          <input type="submit" value="Iniciar sesión">
         </form>
-        
-        <!-- Mensaje de registro de session -->
-        <div class="welcome-back">
-            <div class="message">
-                <h2>Bienvenido al Restaurante Los Primos</h2>
-                <p>Si aun no tienes una cuenta por favor regrístrese aqui</p>
-                <button class="sign-in-btn">Registrarse</button>
-            </div>
-        </div>
-        
+      </div>
+
+      <!-- Mensaje de bienvenida -->
+      <div id="welcomeMessage" class="hidden">
+        <h2>Bienvenido</h2>
+        <p>Has iniciado sesión correctamente. ¡Bienvenido!</p>
+      </div>
     </div>
-    <!-- Etiqueta que redirije al documento donde se escribe el JS -->
-    <script src="js/style.js"></script>
+    
+<script src="js/style.js"></script>
 </body>
 </html>

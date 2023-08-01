@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 header{
@@ -45,7 +45,7 @@ li a:hover{
     background-image:url(/assets/body.png);
     background-size:cover;
     background-repeat: no-repeat;
-    padding-bottom: 13.4em;
+    padding-bottom: 14.1em;
 }
 
 button{
